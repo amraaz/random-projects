@@ -1,0 +1,72 @@
+BEGIN   
+
+
+DECLARE student_name:STRING
+
+DECLARE subject1,subject2,subject3:INTEGER
+
+DECLARE total_marks,avg_marks : INTEGER
+
+OUTPUT "ENTER NAME"
+
+INPUT student_name
+
+OUTPUT "ENTER THREE SUBJECT MARKS"
+
+INPUT subject1
+INPUT subject2
+INPUT subject3
+
+total_marks ⬅ subject1 + subject2 + subject3
+avg_marks   ⬅ total_marks / 3
+
+OUTPUT "student name : ",student_name ,"total marks" ,total_marks ,"Avg marks" ,avg_marks
+
+END
+
+
+
+
+
+BEGIN
+
+DECLARE value,squared_value: REAL
+
+
+OUTPUT "enter number : "
+INPUT value
+
+squared_value ⬅ value^2
+
+OUTPUT "square value : ", squared_value
+
+END 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
