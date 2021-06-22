@@ -1,0 +1,37 @@
+{
+    "monday":{
+        "computer-science":"7:30-8:15",
+        "business-studies":"8:20-9:30",
+        "break":"9:30-10:30",
+        "biology":"10:00:11:15",
+        "chemistry":"11:20-12:30"
+    },
+    "tuesday":{
+        "business-studies":"8:20-9:30",
+        "biology":"10:00:11:15",
+        "break":"9:30-10:30",
+        "computer-science":"7:30-8:15",
+        "chemistry":"11:20-12:30"
+    },
+    "wednesday":{
+        "business-studies":"8:20-9:30",
+        "biology":"10:00:11:15",
+        "break":"9:30-10:30",
+        "chemistry":"11:20-12:30",
+        "computer-science":"7:30-8:15"
+    },
+    "thursday":{
+        "computer-science":"7:30-8:15",
+        "chemistry":"11:20-12:30",
+        "break":"9:30-10:30",
+        "biology":"10:00:11:15",
+        "business-studies":"8:20-9:30"
+    },
+    "friday":{
+        "business-studies":"8:20-9:30",
+        "chemistry":"11:20-12:30",
+        "break":"9:30-10:30",
+        "biology":"10:00:11:15",
+        "computer-science":"7:30-8:15"
+    }
+}
