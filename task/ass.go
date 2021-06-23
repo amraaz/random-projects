@@ -1,12 +1,18 @@
 package main
 
 import (
-	// "log"
+	"log"
+	"encoding/json"
+	"io/ioutil"
+
 	"github.com/pkg/browser"
 	"github.com/leaanthony/clir"
 )
 
-
+type subject struct{
+	name string
+	link string
+}
 
 func main() {
 
@@ -14,15 +20,32 @@ func main() {
 	cli := clir.NewCli("Ass", "assistant for school productivity", "v0.0.1")
 
 	// school
-	var main bool
-	cli.BoolFlag("school","opens main window",&main)
+	school:=cli.NewSubCommand("school","opens the school section")
 
-	// subjects
+	// to set subjects
+	var s string
+	var link string
+	g:= subject{}
+	set:=cli.NewSubCommand("set","set subjects")
+	set.StringFlag("sub","sets the subject",&s)
+	set.StringFlag("link","pass a link to subject",&link)
+
+	set.Action(func() error{
+		if s!=""{
+			g.name=s
+			g.link=link
+			log.Println(g)
+		}
+		return nil
+	})
+
+
+	// select subjects
 	var sub string
-	cli.StringFlag("sub","enter one of the four subjects",&sub)
+	school.StringFlag("sub","enter one of the four subjects",&sub)
 
-	cli.Action(func() error {
-		if main{
+	school.Action(func() error {
+		if sub=="main"{
 			browser.OpenURL("https://teams.microsoft.com/_?culture=en-us&country=US&lm=deeplink&lmsrc=homePageWeb&cmpid=WebSignIn#/school/conversations/General?threadId=19:aXxr_nW304fsSPMK8ykXQ5fD-iqHPTOVv3DJsfINgxo1@thread.tacv2&ctx=channel")
 		}
 
