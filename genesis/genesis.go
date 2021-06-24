@@ -5,7 +5,13 @@ import (
 	"github.com/pterm/pterm"
 	"github.com/leaanthony/clir"
 	"strconv"
+	"io/ioutil"
+	"encoding/json"
 )
+
+func to_file(){
+	
+}
 
 func tim(duration int,buffer int){
 	area, _ := pterm.DefaultArea.WithCenter().Start() 

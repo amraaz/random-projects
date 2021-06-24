@@ -2,8 +2,8 @@ package main
 
 import (
 	"log"
-	"encoding/json"
-	"io/ioutil"
+	// "encoding/json"
+	// "io/ioutil"
 
 	"github.com/pkg/browser"
 	"github.com/leaanthony/clir"
