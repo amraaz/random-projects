@@ -1,17 +1,27 @@
 package main
 
 import (
+	"encoding/json"
+	"io/ioutil"
 	"log"
-	// "encoding/json"
-	// "io/ioutil"
 
-	"github.com/pkg/browser"
 	"github.com/leaanthony/clir"
+	"github.com/pkg/browser"
 )
 
 type subject struct{
 	name string
 	link string
+}
+
+func save(s string, link string) {
+	sub:=subject{name:s,link:link}
+	f,_:= json.Marshal(sub)
+	err:=ioutil.WriteFile("user.json",f,0644)
+	if err !=nil{
+		log.Print("Error saving file")
+	}
+	
 }
 
 func main() {
@@ -21,20 +31,17 @@ func main() {
 
 	// school
 	school:=cli.NewSubCommand("school","opens the school section")
-
 	// to set subjects
 	var s string
 	var link string
-	g:= subject{}
+	// g:= subject{}
 	set:=cli.NewSubCommand("set","set subjects")
 	set.StringFlag("sub","sets the subject",&s)
 	set.StringFlag("link","pass a link to subject",&link)
 
 	set.Action(func() error{
 		if s!=""{
-			g.name=s
-			g.link=link
-			log.Println(g)
+			save(s,link)
 		}
 		return nil
 	})
